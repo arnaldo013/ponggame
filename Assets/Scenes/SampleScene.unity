@@ -456,6 +456,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
+  ball: {fileID: 554732348}
 --- !u!1 &864319843
 GameObject:
   m_ObjectHideFlags: 0
