@@ -11,7 +11,7 @@ public class NewBehaviourScript : MonoBehaviour
     void Start()
     {
         ball.velocity = new Vector2(-1, -1) * speed;
-        StartCoroutine (Pause()) ;
+       
     }
 
     // Update is called once per frame
@@ -24,13 +24,15 @@ public class NewBehaviourScript : MonoBehaviour
         if (other.collider.name == "DindingKanan" || other.collider.name == "DindingKiri")
         {
             GetComponent<Transform>().position = new Vector2(0, 0);
+            StartCoroutine(Pause());
         }
     }
     IEnumerator Pause()
     {
+        ball.velocity = Vector2.zero;
+        ball.GetComponent < Transform>().position = Vector2.zero;
         yield return new WaitForSeconds(1);
         ball.velocity = new Vector2(-1, -1) * speed;
-        yield return new WaitForSeconds(1);
     }
 
 
