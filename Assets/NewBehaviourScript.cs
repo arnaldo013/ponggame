@@ -11,6 +11,7 @@ public class NewBehaviourScript : MonoBehaviour
     void Start()
     {
         ball.velocity = new Vector2(-1, -1) * speed;
+        StartCoroutine (Pause()) ;
     }
 
     // Update is called once per frame
@@ -25,5 +26,12 @@ public class NewBehaviourScript : MonoBehaviour
             GetComponent<Transform>().position = new Vector2(0, 0);
         }
     }
+    IEnumerator Pause()
+    {
+        yield return new WaitForSeconds(1);
+        ball.velocity = new Vector2(-1, -1) * speed;
+        yield return new WaitForSeconds(1);
+    }
+
 
 }
