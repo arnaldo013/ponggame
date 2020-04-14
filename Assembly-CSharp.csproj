@@ -67,6 +67,7 @@
     <Compile Include="Assets\PlayScript.cs" />
     <Compile Include="Assets\Racket2Movement.cs" />
     <Compile Include="Assets\RacketMovement.cs" />
+    <Compile Include="Assets\ScoreManager.cs" />
     <Compile Include="Assets\TimerScript.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />

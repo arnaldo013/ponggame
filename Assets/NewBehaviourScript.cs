@@ -4,24 +4,31 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
 {
-    public int speed = 30;
+    //public int speed = 30;
 
     public Rigidbody2D ball;
-
+    
     public Animator animtr;
     // Start is called before the first frame update
     void Start()
-    {
-        ball.velocity = new Vector2(-1, -1) * speed;
+    { 
+        int x = Random.Range(0, 2) * 2 - 1; //nilai x bisa -1 atau 1
+        int y = Random.Range(0, 2) * 2 - 1; //nilai y bisa -1 atau 1
+        int speed = Random.Range(22, 26); // nilai ntara 20 - 25
+        ball.velocity = new Vector2(x, y) * speed;
+        ball.GetComponent<Transform>().position = Vector2.zero;
         animtr.SetBool("ItsMove", true);
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (ball.velocity.x > 0){//bola bergerak ke kanan
+        if (ball.velocity.x > 0)
+        {//bola bergerak ke kanan
             ball.GetComponent<Transform>().localScale = new Vector3(1, 1, 1);
-        }else{
+        }
+        else
+        {
             ball.GetComponent<Transform>().localScale = new Vector3(-1, 1, 1);
         }
     }
@@ -37,11 +44,15 @@ public class NewBehaviourScript : MonoBehaviour
     {
         ball.velocity = Vector2.zero;
         animtr.SetBool("ItsMove", false);
-        ball.GetComponent < Transform>().position = Vector2.zero;
+        ball.GetComponent<Transform>().position = Vector2.zero;
+
         yield return new WaitForSeconds(1);
-        ball.velocity = new Vector2(-1, -1) * speed;
+
+        int x = Random.Range(0, 2) * 2 - 1; //nilai x bisa -1 atau 1
+        int y = Random.Range(0, 2) * 2 - 1; //nilai y bisa -1 atau 1
+        int speed = Random.Range(22, 26); // nilai ntara 20 - 25
+        ball.velocity = new Vector2(x, y) * speed;
         animtr.SetBool("ItsMove", true);
     }
-
 
 }

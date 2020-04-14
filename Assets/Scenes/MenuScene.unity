@@ -930,6 +930,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 824997956832793642, guid: fe37b5287818d804da679f704bb68025,
+        type: 3}
+      propertyPath: speed
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 824997956832793645, guid: fe37b5287818d804da679f704bb68025,
         type: 3}
       propertyPath: m_Name
