@@ -7,7 +7,9 @@ public class NewBehaviourScript : MonoBehaviour
     //public int speed = 30;
 
     public Rigidbody2D ball;
-    
+
+    public GameObject masterScript;
+
     public Animator animtr;
     // Start is called before the first frame update
     void Start()
@@ -36,6 +38,7 @@ public class NewBehaviourScript : MonoBehaviour
     {
         if (other.collider.name == "DindingKanan" || other.collider.name == "DindingKiri")
         {
+            masterScript.GetComponent<ScoringScript>().updateScore(other.collider.name); 
             GetComponent<Transform>().position = new Vector2(0, 0);
             StartCoroutine(Pause());
         }
