@@ -11,6 +11,8 @@ public class NewBehaviourScript : MonoBehaviour
     public GameObject masterScript;
 
     public Animator animtr;
+
+    public AudioSource hitEffect;
     // Start is called before the first frame update
     void Start()
     { 
@@ -41,6 +43,10 @@ public class NewBehaviourScript : MonoBehaviour
             masterScript.GetComponent<ScoringScript>().updateScore(other.collider.name); 
             GetComponent<Transform>().position = new Vector2(0, 0);
             StartCoroutine(Pause());
+        }
+        if (other.collider.tag == "Player")
+        {
+            hitEffect.Play(); 
         }
     }
     IEnumerator Pause()
